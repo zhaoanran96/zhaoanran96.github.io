@@ -92,12 +92,12 @@
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://image.baidu.com/search/down?url=https://lz.sinaimg.cn/large/6833939bly1gipesrnqv3j20zk0m8ava.jpg"></li>
-          <li class="item" data-background-image="https://image.baidu.com/search/down?url=https://lz.sinaimg.cn/large/6833939bly1gipevo9j1jj20zk0m8e81.jpg"></li>
-          <li class="item" data-background-image="https://image.baidu.com/search/down?url=https://lz.sinaimg.cn/large/6833939bly1giclwuom7cj20zk0m8dvn.jpg"></li>
-          <li class="item" data-background-image="https://image.baidu.com/search/down?url=https://lz.sinaimg.cn/large/6833939bly1giph4lm9i7j20zk0m84qp.jpg"></li>
-          <li class="item" data-background-image="https://image.baidu.com/search/down?url=https://lz.sinaimg.cn/large/6833939bly1giclxxcb6rj20zk0m8b29.jpg"></li>
-          <li class="item" data-background-image="https://image.baidu.com/search/down?url=https://lz.sinaimg.cn/large/6833939bly1gicit31ffoj20zk0m8naf.jpg"></li>
+          <li class="item" data-background-image="https://image.baidu.com/search/down?url=https://lz.sinaimg.cn/large/6833939bly1giciuja1j1j20zk0m8kjl.jpg"></li>
+          <li class="item" data-background-image="https://image.baidu.com/search/down?url=https://lz.sinaimg.cn/large/6833939bly1gicitspjpbj20zk0m81ky.jpg"></li>
+          <li class="item" data-background-image="https://image.baidu.com/search/down?url=https://lz.sinaimg.cn/large/6833939bly1gicljitigmj20zk0m87fp.jpg"></li>
+          <li class="item" data-background-image="https://image.baidu.com/search/down?url=https://lz.sinaimg.cn/large/6833939bly1giciryrr3rj20zk0m8nhk.jpg"></li>
+          <li class="item" data-background-image="https://image.baidu.com/search/down?url=https://lz.sinaimg.cn/large/6833939bly1giclgi503lj20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://image.baidu.com/search/down?url=https://lz.sinaimg.cn/large/6833939bly1giph4wqtg4j20zk0m8x6p.jpg"></li>
         </ul>
       </div>
     <div id="waves">
@@ -124,151 +124,347 @@
         
 <article class="item">
   <div class="cover">
-    <a href="/2023/08/20/mongdb/%E7%AC%AC%E4%BA%8C%E7%AB%A0%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/" itemprop="url" title="第二章————MongoDB存储结构"><img data-src="https://image.baidu.com/search/down?url=https://lz.sinaimg.cn/large/6833939bly1giph4lm9i7j20zk0m84qp.jpg"></a>
+    <a href="/2023/08/20/redis/%E7%AC%AC%E4%BA%8C%E7%AB%A0redis%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" itemprop="url" title="第二章————redis数据类型"><img data-src="https://image.baidu.com/search/down?url=https://lz.sinaimg.cn/large/6833939bly1gipeu7txpzj20zk0m81kx.jpg"></a>
   </div>
   <div class="info">
     
 <div class="meta">
-  <span class="item" title="创建时间：2023-08-20 19:34:54">
+  <span class="item" title="创建时间：2023-08-20 20:41:57">
     <span class="icon">
       <i class="ic i-calendar"></i>
     </span>
-    <time itemprop="dateCreated datePublished" datetime="2023-08-20T19:34:54+08:00">2023-08-20</time>
+    <time itemprop="dateCreated datePublished" datetime="2023-08-20T20:41:57+08:00">2023-08-20</time>
   </span>
 </div>
 
-    <h3><a href="/2023/08/20/mongdb/%E7%AC%AC%E4%BA%8C%E7%AB%A0%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/" itemprop="url" title="第二章————MongoDB存储结构">第二章————MongoDB存储结构</a></h3>
+    <h3><a href="/2023/08/20/redis/%E7%AC%AC%E4%BA%8C%E7%AB%A0redis%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" itemprop="url" title="第二章————redis数据类型">第二章————redis数据类型</a></h3>
     <div class="excerpt">
-        MongoDB 的存储结构区别于传统的关系型数据库，主要由如下三个单元组成：
+        redis数据类型五种数据类型String是 Redis 最基本的类型，可以理解成与 Memcached一模一样的类型，一个 Key 对应一个 Value。Value 不仅是 String，也可以是数字。
+1String 类型是二进制安全的，意思是 Redis 的 String 类型可以包含任何数据，比如 jpg 图片或者序列化的对象。String 类型的值最大能存储 512M。
 
-文档（Document） ：MongoDB 中最基本的单元，由 BSON 键值对（key-value）组成，类似于关系型数据库中的行（Row）。
-集合（Collection） ：一个集合可以包含多个文档，类似于关系型数据库中的表（Table）。
-数据库（Database） ：一个数据库中可以包含多个集合，可以在 MongoDB 中创建多个数据库，类似于关系型数据库中的数据库（Database）。
-
-也就是说，MongoDB 将数据记录存储为文档 （更具体来说是BSON...
+底层数据结构：string的底层实现可以是int、raw、embstr。
+int 编码是用来保存整数值，raw编码是用来保存长字符串，而embstr是用来保存短字符串。
+int，存储 8...
     </div>
     <div class="meta footer">
       <span>
-        <a href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" title="分布式数据库"><i class="ic i-flag"></i>分布式数据库</a>
+        <a href="/categories/redis/" itemprop="url" title="redis"><i class="ic i-flag"></i>redis</a>
       </span>
     </div>
-    <a href="/2023/08/20/mongdb/%E7%AC%AC%E4%BA%8C%E7%AB%A0%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/" itemprop="url" title="第二章————MongoDB存储结构" class="btn">more...</a>
+    <a href="/2023/08/20/redis/%E7%AC%AC%E4%BA%8C%E7%AB%A0redis%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" itemprop="url" title="第二章————redis数据类型" class="btn">more...</a>
   </div>
 </article>
 
         
 <article class="item">
   <div class="cover">
-    <a href="/2023/08/20/mongdb/%E7%AC%AC%E4%B8%89%E7%AB%A0MongoDB%E7%89%B9%E7%82%B9/" itemprop="url" title="第三章————MongoDB特点"><img data-src="https://image.baidu.com/search/down?url=https://lz.sinaimg.cn/large/6833939bly1giclg5ms2rj20zk0m8u0x.jpg"></a>
+    <a href="/2023/08/20/redis/%E7%AC%AC%E4%B8%89%E7%AB%A0redis%E9%A1%B9%E7%9B%AE%E4%BD%BF%E7%94%A8/" itemprop="url" title="第三章————redis项目使用"><img data-src="https://image.baidu.com/search/down?url=https://lz.sinaimg.cn/large/6833939bly1giclffsa1cj20zk0m811l.jpg"></a>
   </div>
   <div class="info">
     
 <div class="meta">
-  <span class="item" title="创建时间：2023-08-20 19:34:54">
+  <span class="item" title="创建时间：2023-08-20 20:41:57">
     <span class="icon">
       <i class="ic i-calendar"></i>
     </span>
-    <time itemprop="dateCreated datePublished" datetime="2023-08-20T19:34:54+08:00">2023-08-20</time>
+    <time itemprop="dateCreated datePublished" datetime="2023-08-20T20:41:57+08:00">2023-08-20</time>
   </span>
 </div>
 
-    <h3><a href="/2023/08/20/mongdb/%E7%AC%AC%E4%B8%89%E7%AB%A0MongoDB%E7%89%B9%E7%82%B9/" itemprop="url" title="第三章————MongoDB特点">第三章————MongoDB特点</a></h3>
+    <h3><a href="/2023/08/20/redis/%E7%AC%AC%E4%B8%89%E7%AB%A0redis%E9%A1%B9%E7%9B%AE%E4%BD%BF%E7%94%A8/" itemprop="url" title="第三章————redis项目使用">第三章————redis项目使用</a></h3>
     <div class="excerpt">
-        MongoDB特点特点
-数据记录被存储为文档 ：MongoDB 中的记录就是一个 BSON 文档，它是由键值对组成的数据结构，类似于 JSON 对象，是 MongoDB 中的基本数据单元。
-模式自由 ：集合的概念类似 MySQL 里的表，但它不需要定义任何模式，能够用更少的数据对象表现复杂的领域模型对象。
-支持多种查询方式 ：MongoDB 查询 API 支持读写操作 (CRUD)以及数据聚合、文本搜索和地理空间查询。
-支持 ACID 事务 ：NoSQL 数据库通常不支持事务，为了可扩展和高性能进行了权衡。不过，也有例外，MongoDB 就支持事务。与关系型数据库一样，MongoDB...
+        redis项目使用两种方式我们在日常开发中，一般通过以下两种方式去实现redis缓存的增删改查操作：
+
+直接通过 RedisTemplate 来使用
+使用 Spring Cache 集成 Redis
+
+项目使用添加依赖1234567891011121314151617181920212223&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;...
     </div>
     <div class="meta footer">
       <span>
-        <a href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" title="分布式数据库"><i class="ic i-flag"></i>分布式数据库</a>
+        <a href="/categories/redis/" itemprop="url" title="redis"><i class="ic i-flag"></i>redis</a>
       </span>
     </div>
-    <a href="/2023/08/20/mongdb/%E7%AC%AC%E4%B8%89%E7%AB%A0MongoDB%E7%89%B9%E7%82%B9/" itemprop="url" title="第三章————MongoDB特点" class="btn">more...</a>
+    <a href="/2023/08/20/redis/%E7%AC%AC%E4%B8%89%E7%AB%A0redis%E9%A1%B9%E7%9B%AE%E4%BD%BF%E7%94%A8/" itemprop="url" title="第三章————redis项目使用" class="btn">more...</a>
   </div>
 </article>
 
         
 <article class="item">
   <div class="cover">
-    <a href="/2023/08/20/mongdb/%E7%AC%AC%E4%B8%80%E7%AB%A0MongoDB%E7%AE%80%E4%BB%8B/" itemprop="url" title="第一章————MongoDB介绍"><img data-src="https://image.baidu.com/search/down?url=https://lz.sinaimg.cn/large/6833939bly1giciusoyjnj219g0u0x56.jpg"></a>
+    <a href="/2023/08/20/redis/%E7%AC%AC%E4%BA%94%E7%AB%A0Redis%20%E4%B8%BA%E4%BD%95%E8%BF%99%E4%B9%88%E5%BF%AB/" itemprop="url" title="第五章————redis为何这么快！"><img data-src="https://image.baidu.com/search/down?url=https://lz.sinaimg.cn/large/6833939bly1gipex2cdtbj20zk0m8x6p.jpg"></a>
   </div>
   <div class="info">
     
 <div class="meta">
-  <span class="item" title="创建时间：2023-08-20 16:57:57">
+  <span class="item" title="创建时间：2023-08-20 20:41:41">
     <span class="icon">
       <i class="ic i-calendar"></i>
     </span>
-    <time itemprop="dateCreated datePublished" datetime="2023-08-20T16:57:57+08:00">2023-08-20</time>
+    <time itemprop="dateCreated datePublished" datetime="2023-08-20T20:41:41+08:00">2023-08-20</time>
   </span>
 </div>
 
-    <h3><a href="/2023/08/20/mongdb/%E7%AC%AC%E4%B8%80%E7%AB%A0MongoDB%E7%AE%80%E4%BB%8B/" itemprop="url" title="第一章————MongoDB介绍">第一章————MongoDB介绍</a></h3>
+    <h3><a href="/2023/08/20/redis/%E7%AC%AC%E4%BA%94%E7%AB%A0Redis%20%E4%B8%BA%E4%BD%95%E8%BF%99%E4%B9%88%E5%BF%AB/" itemprop="url" title="第五章————redis为何这么快！">第五章————redis为何这么快！</a></h3>
     <div class="excerpt">
-        MongoDB简介MongoDB 是一个基于 分布式文件存储 的开源 NoSQL 数据库系统，由 C++ 编写的。MongoDB 提供了 面向文档 的存储方式，操作起来比较简单和容易，支持“无模式”的数据建模，可以存储比较复杂的数据类型，是一款非常流行的 文档类型数据库 。
-在高负载的情况下，MongoDB 天然支持水平扩展和高可用，可以很方便地添加更多的节点&amp;#x2F;实例，以保证服务性能和可用性。在许多场景下，MongoDB 可以用于代替传统的关系型数据库或键&amp;#x2F;值存储方式，皆在为 Web 应用提供可扩展的高可用高性能数据存储解决方案。
+        Redis 为何这么快redis为何这么快官方提供的数据可以达到 100000+ 的 QPS（每秒内的查询次数），有人就会很好奇它那么快，是不是因为多线程的缘故。
+但是redis实际上是单进程单线程的模型，因为 Redis 完全是基于内存的操作，CPU 不是 Redis 的瓶颈，Redis 的瓶颈最有可能是机器内存的大小或者网络带宽。既然单线程容易实现，而且 CPU 不会成为瓶颈，那就顺理成章的采用单线程的方案了（毕竟采用多线程会有很多麻烦）。
+既然redis是单线程了，为什么还会那么快呢？
+1234Redis 完全基于内存，绝大部分请求是纯粹的内存操作，非常迅速，数据存在内存中，类似于...
     </div>
     <div class="meta footer">
       <span>
-        <a href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" title="分布式数据库"><i class="ic i-flag"></i>分布式数据库</a>
+        <a href="/categories/redis/" itemprop="url" title="redis"><i class="ic i-flag"></i>redis</a>
       </span>
     </div>
-    <a href="/2023/08/20/mongdb/%E7%AC%AC%E4%B8%80%E7%AB%A0MongoDB%E7%AE%80%E4%BB%8B/" itemprop="url" title="第一章————MongoDB介绍" class="btn">more...</a>
+    <a href="/2023/08/20/redis/%E7%AC%AC%E4%BA%94%E7%AB%A0Redis%20%E4%B8%BA%E4%BD%95%E8%BF%99%E4%B9%88%E5%BF%AB/" itemprop="url" title="第五章————redis为何这么快！" class="btn">more...</a>
   </div>
 </article>
 
         
 <article class="item">
   <div class="cover">
-    <a href="/2023/08/20/%E7%AC%AC%E4%B8%80%E7%AB%A0%E5%BC%95%E8%A8%80/" itemprop="url" title="未命名"><img data-src="https://image.baidu.com/search/down?url=https://lz.sinaimg.cn/large/6833939bly1giclimtf7dj20zk0m8qav.jpg"></a>
+    <a href="/2023/08/20/redis/%E7%AC%AC%E5%9B%9B%E7%AB%A0redis%E7%BC%93%E5%AD%98%E9%97%AE%E9%A2%98/" itemprop="url" title="第四章————redis缓存"><img data-src="https://image.baidu.com/search/down?url=https://lz.sinaimg.cn/large/6833939bly1gipew28b65j20zk0m8hdt.jpg"></a>
   </div>
   <div class="info">
     
 <div class="meta">
-  <span class="item" title="创建时间：2023-08-20 16:55:50">
+  <span class="item" title="创建时间：2023-08-20 20:41:41">
     <span class="icon">
       <i class="ic i-calendar"></i>
     </span>
-    <time itemprop="dateCreated datePublished" datetime="2023-08-20T16:55:50+08:00">2023-08-20</time>
+    <time itemprop="dateCreated datePublished" datetime="2023-08-20T20:41:41+08:00">2023-08-20</time>
   </span>
 </div>
 
-    <h3><a href="/2023/08/20/%E7%AC%AC%E4%B8%80%E7%AB%A0%E5%BC%95%E8%A8%80/" itemprop="url" title="未命名">未命名</a></h3>
+    <h3><a href="/2023/08/20/redis/%E7%AC%AC%E5%9B%9B%E7%AB%A0redis%E7%BC%93%E5%AD%98%E9%97%AE%E9%A2%98/" itemprop="url" title="第四章————redis缓存">第四章————redis缓存</a></h3>
     <div class="excerpt">
-        引言
-高并发场景在现场的日常工作中很常见，特别是在互联网公司中，这篇文章就来通过秒杀商品来模拟高并发的场景。文章末尾会附上文章的所有代码、脚本和测试用例。
+        redis缓存问题缓存一致性问题缓存和数据库数据一致性问题：分布式环境下非常容易出现缓存和数据库间数据一致性问题，针对这一点，如果项目对缓存的要求是强一致性的，那么就不要使用缓存。
+我们只能采取合适的策略来降低缓存和数据库间数据不一致的概率，而无法保证两者间的强一致性。
+合适的策略包括合适的缓存更新策略，更新数据库后及时更新缓存、缓存失败时增加重试机制。更详细的数据库和缓存一致性问题可以阅读一下：《如何保证数据库和缓存双写一致性》
+缓存雪崩缓存雪崩是指缓存中数据大批量到过期时间，而查询数据量巨大，引起数据库压力过大甚至down机。
+和缓存击穿不同的是，缓存击穿指并发查同一条数据，缓存雪崩是不同...
     </div>
-    <a href="/2023/08/20/%E7%AC%AC%E4%B8%80%E7%AB%A0%E5%BC%95%E8%A8%80/" itemprop="url" title="未命名" class="btn">more...</a>
+    <div class="meta footer">
+      <span>
+        <a href="/categories/redis/" itemprop="url" title="redis"><i class="ic i-flag"></i>redis</a>
+      </span>
+    </div>
+    <a href="/2023/08/20/redis/%E7%AC%AC%E5%9B%9B%E7%AB%A0redis%E7%BC%93%E5%AD%98%E9%97%AE%E9%A2%98/" itemprop="url" title="第四章————redis缓存" class="btn">more...</a>
   </div>
 </article>
 
         
 <article class="item">
   <div class="cover">
-    <a href="/2023/08/20/hello-world/" itemprop="url" title="Hello World"><img data-src="https://image.baidu.com/search/down?url=https://lz.sinaimg.cn/large/6833939bly1giph4fomxoj20zk0m8axp.jpg"></a>
+    <a href="/2023/08/20/redis/%E7%AC%AC%E4%B8%80%E7%AB%A0redis%E7%AE%80%E4%BB%8B/" itemprop="url" title="第一章————redis简介"><img data-src="https://image.baidu.com/search/down?url=https://lz.sinaimg.cn/large/6833939bly1gicli9lfebj20zk0m84qp.jpg"></a>
   </div>
   <div class="info">
     
 <div class="meta">
-  <span class="item" title="创建时间：2023-08-20 15:40:49">
+  <span class="item" title="创建时间：2023-08-20 20:41:41">
     <span class="icon">
       <i class="ic i-calendar"></i>
     </span>
-    <time itemprop="dateCreated datePublished" datetime="2023-08-20T15:40:49+08:00">2023-08-20</time>
+    <time itemprop="dateCreated datePublished" datetime="2023-08-20T20:41:41+08:00">2023-08-20</time>
   </span>
 </div>
 
-    <h3><a href="/2023/08/20/hello-world/" itemprop="url" title="Hello World">Hello World</a></h3>
+    <h3><a href="/2023/08/20/redis/%E7%AC%AC%E4%B8%80%E7%AB%A0redis%E7%AE%80%E4%BB%8B/" itemprop="url" title="第一章————redis简介">第一章————redis简介</a></h3>
     <div class="excerpt">
-        Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post1$ hexo new &amp;quot;My New Post&amp;quot;
-
-More info: Writing
-Run server1$...
+        redisredis简介
+是什么
+Redis:REmote DIctionary Server(远程字典服务器)，是完全开源免费的，用C语言编写的，遵守BSD协议，是一个高性能的(key&amp;#x2F;value)分布式内存数据库，基于内存运行并支持持久化的NoSQL数据库，是当前最热门的NoSql数据库之一,也被人们称为数据结构服务器。
+Redis 与其他 key - value...
     </div>
-    <a href="/2023/08/20/hello-world/" itemprop="url" title="Hello World" class="btn">more...</a>
+    <div class="meta footer">
+      <span>
+        <a href="/categories/redis/" itemprop="url" title="redis"><i class="ic i-flag"></i>redis</a>
+      </span>
+    </div>
+    <a href="/2023/08/20/redis/%E7%AC%AC%E4%B8%80%E7%AB%A0redis%E7%AE%80%E4%BB%8B/" itemprop="url" title="第一章————redis简介" class="btn">more...</a>
+  </div>
+</article>
+
+        
+<article class="item">
+  <div class="cover">
+    <a href="/2023/08/20/html/05-HTML%E6%A0%87%E7%AD%BE%EF%BC%9A%E5%AD%97%E4%BD%93%E6%A0%87%E7%AD%BE%E5%92%8C%E8%B6%85%E9%93%BE%E6%8E%A5/" itemprop="url" title="第五章————字体标签和超链接"><img data-src="https://image.baidu.com/search/down?url=https://lz.sinaimg.cn/large/6833939bly1gicitf0kl1j20zk0m87fe.jpg"></a>
+  </div>
+  <div class="info">
+    
+<div class="meta">
+  <span class="item" title="创建时间：2023-08-20 20:07:19">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <time itemprop="dateCreated datePublished" datetime="2023-08-20T20:07:19+08:00">2023-08-20</time>
+  </span>
+</div>
+
+    <h3><a href="/2023/08/20/html/05-HTML%E6%A0%87%E7%AD%BE%EF%BC%9A%E5%AD%97%E4%BD%93%E6%A0%87%E7%AD%BE%E5%92%8C%E8%B6%85%E9%93%BE%E6%8E%A5/" itemprop="url" title="第五章————字体标签和超链接">第五章————字体标签和超链接</a></h3>
+    <div class="excerpt">
+        本文主要内容字体标签： &amp;lt;font&amp;gt;、 &amp;lt;b&amp;gt;、 &amp;lt;u&amp;gt; 、&amp;lt;sup&amp;gt; 、&amp;lt;sub&amp;gt;
+超链接 &amp;lt;a&amp;gt;
+字体标签特殊字符（转义字符）
+&amp;amp;nbsp;：空格	（non-breaking spacing，不断打空格）
+&amp;amp;lt;：小于号&amp;lt;（less than）
+&amp;amp;gt;：大于号&amp;gt;（greater...
+    </div>
+    <div class="meta footer">
+      <span>
+        <a href="/categories/HTML/" itemprop="url" title="HTML"><i class="ic i-flag"></i>HTML</a>
+      </span>
+    </div>
+    <a href="/2023/08/20/html/05-HTML%E6%A0%87%E7%AD%BE%EF%BC%9A%E5%AD%97%E4%BD%93%E6%A0%87%E7%AD%BE%E5%92%8C%E8%B6%85%E9%93%BE%E6%8E%A5/" itemprop="url" title="第五章————字体标签和超链接" class="btn">more...</a>
+  </div>
+</article>
+
+        
+<article class="item">
+  <div class="cover">
+    <a href="/2023/08/20/html/04-HTML%E6%A0%87%E7%AD%BE%EF%BC%9A%E6%8E%92%E7%89%88%E6%A0%87%E7%AD%BE/" itemprop="url" title="第四章————排版标签"><img data-src="https://image.baidu.com/search/down?url=https://lz.sinaimg.cn/large/6833939bly1gipeyhsblkj20zk0m81kx.jpg"></a>
+  </div>
+  <div class="info">
+    
+<div class="meta">
+  <span class="item" title="创建时间：2023-08-20 20:07:19">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <time itemprop="dateCreated datePublished" datetime="2023-08-20T20:07:19+08:00">2023-08-20</time>
+  </span>
+</div>
+
+    <h3><a href="/2023/08/20/html/04-HTML%E6%A0%87%E7%AD%BE%EF%BC%9A%E6%8E%92%E7%89%88%E6%A0%87%E7%AD%BE/" itemprop="url" title="第四章————排版标签">第四章————排版标签</a></h3>
+    <div class="excerpt">
+        本文主要内容排版标签：
+
+&amp;lt;h1&amp;gt;
+
+&amp;lt;p&amp;gt;
+
+&amp;lt;hr /&amp;gt;
+
+&amp;lt;br...
+    </div>
+    <div class="meta footer">
+      <span>
+        <a href="/categories/HTML/" itemprop="url" title="HTML"><i class="ic i-flag"></i>HTML</a>
+      </span>
+    </div>
+    <a href="/2023/08/20/html/04-HTML%E6%A0%87%E7%AD%BE%EF%BC%9A%E6%8E%92%E7%89%88%E6%A0%87%E7%AD%BE/" itemprop="url" title="第四章————排版标签" class="btn">more...</a>
+  </div>
+</article>
+
+        
+<article class="item">
+  <div class="cover">
+    <a href="/2023/08/20/html/03-%E5%88%9D%E8%AF%86HTML/" itemprop="url" title="第三章————初识HTML"><img data-src="https://image.baidu.com/search/down?url=https://lz.sinaimg.cn/large/6833939bly1gipeuibk9fj20zk0m8ay2.jpg"></a>
+  </div>
+  <div class="info">
+    
+<div class="meta">
+  <span class="item" title="创建时间：2023-08-20 20:07:19">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <time itemprop="dateCreated datePublished" datetime="2023-08-20T20:07:19+08:00">2023-08-20</time>
+  </span>
+</div>
+
+    <h3><a href="/2023/08/20/html/03-%E5%88%9D%E8%AF%86HTML/" itemprop="url" title="第三章————初识HTML">第三章————初识HTML</a></h3>
+    <div class="excerpt">
+        编辑器相关前端开发的编辑器软件，我首先推荐 VS Code，其次推荐Sublime Text。
+有人说 WebStorm 也不错？但真实情况是，自从VS Code 问世之后，用 WebStorm 的人越来越少了。
+PS：文件的后缀名不能决定文件格式，只能决定打开文件打开的方式。
+VS Code 的使用详情请移步至：第一次使用VS Code时你应该知道的一切配置
+Sublime Text 的使用详情请移步至：Sublime Text使用技巧
+HTML的概述HTML的概念HTML 全称为 HyperText Markup Language，译为超文本标记语言。
+HTML...
+    </div>
+    <div class="meta footer">
+      <span>
+        <a href="/categories/HTML/" itemprop="url" title="HTML"><i class="ic i-flag"></i>HTML</a>
+      </span>
+    </div>
+    <a href="/2023/08/20/html/03-%E5%88%9D%E8%AF%86HTML/" itemprop="url" title="第三章————初识HTML" class="btn">more...</a>
+  </div>
+</article>
+
+        
+<article class="item">
+  <div class="cover">
+    <a href="/2023/08/20/html/02-%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E4%BB%8B%E7%BB%8D/" itemprop="url" title="第二章————浏览器的介绍"><img data-src="https://image.baidu.com/search/down?url=https://lz.sinaimg.cn/large/6833939bly1gipesrnqv3j20zk0m8ava.jpg"></a>
+  </div>
+  <div class="info">
+    
+<div class="meta">
+  <span class="item" title="创建时间：2023-08-20 20:07:19">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <time itemprop="dateCreated datePublished" datetime="2023-08-20T20:07:19+08:00">2023-08-20</time>
+  </span>
+</div>
+
+    <h3><a href="/2023/08/20/html/02-%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E4%BB%8B%E7%BB%8D/" itemprop="url" title="第二章————浏览器的介绍">第二章————浏览器的介绍</a></h3>
+    <div class="excerpt">
+        常见的浏览器浏览器是网页运行的平台，常见的浏览器有谷歌（Chrome）、Safari、火狐（Firefox）、IE、Edge、Opera等。如下图所示：
+
+我们重点需要学习的是 Chrome 浏览器。
+浏览器的市场占有份额浏览器的市场占有份额：https://tongji.baidu.com/research/site?source=index#browser
+
+上面这张图的统计时间是2020年2月。
+浏览器的组成浏览器分成两部分：
+
+1、渲染引擎（即：浏览器内核）
+
+2、JS 引擎
+
+1、渲染引擎（浏览器内核）浏览器所采用的「渲染引擎」也称之为「浏览器内核」，用来解析...
+    </div>
+    <div class="meta footer">
+      <span>
+        <a href="/categories/HTML/" itemprop="url" title="HTML"><i class="ic i-flag"></i>HTML</a>
+      </span>
+    </div>
+    <a href="/2023/08/20/html/02-%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E4%BB%8B%E7%BB%8D/" itemprop="url" title="第二章————浏览器的介绍" class="btn">more...</a>
+  </div>
+</article>
+
+        
+<article class="item">
+  <div class="cover">
+    <a href="/2023/08/20/html/01-%E8%AE%A4%E8%AF%86Web%E5%92%8CWeb%E6%A0%87%E5%87%86/" itemprop="url" title="第一章————认识web"><img data-src="https://image.baidu.com/search/down?url=https://lz.sinaimg.cn/large/6833939bly1gipexj2jgzj20zk0m8b09.jpg"></a>
+  </div>
+  <div class="info">
+    
+<div class="meta">
+  <span class="item" title="创建时间：2023-08-20 20:07:19">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <time itemprop="dateCreated datePublished" datetime="2023-08-20T20:07:19+08:00">2023-08-20</time>
+  </span>
+</div>
+
+    <h3><a href="/2023/08/20/html/01-%E8%AE%A4%E8%AF%86Web%E5%92%8CWeb%E6%A0%87%E5%87%86/" itemprop="url" title="第一章————认识web">第一章————认识web</a></h3>
+    <div class="excerpt">
+        Web、网页、浏览器WebWeb（World Wide Web）即全球广域网，也称为万维网。
+我们常说的Web端就是网页端。
+网页网页是构成网站的基本元素。网页主要由文字、图像和超链接等元素构成。当然，除了这些元素，网页中还可以包含音频、视频以及Flash等。
+我们在浏览器上输入网址后，打开的任何一个页面，都是属于网页。
+浏览器浏览器是网页运行的平台，常见的浏览器有谷歌（Chrome）、Safari、火狐（Firefox）、IE、Edge、Opera等。
+关于浏览器的详细介绍，可以看下一篇文章：《浏览器的介绍》。
+Web标准W3C组织W3C：World Wide Web...
+    </div>
+    <div class="meta footer">
+      <span>
+        <a href="/categories/HTML/" itemprop="url" title="HTML"><i class="ic i-flag"></i>HTML</a>
+      </span>
+    </div>
+    <a href="/2023/08/20/html/01-%E8%AE%A4%E8%AF%86Web%E5%92%8CWeb%E6%A0%87%E5%87%86/" itemprop="url" title="第一章————认识web" class="btn">more...</a>
   </div>
 </article>
 
@@ -277,6 +473,11 @@ Run server1$...
   </div>
 
   
+  <nav class="pagination">
+    <div class="inner">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="ic i-angle-right" aria-label="下一页"></i></a>
+    </div>
+  </nav>
 
 
 
@@ -303,13 +504,13 @@ Run server1$...
 <nav class="state">
     <div class="item posts">
       <a href="/archives/">
-        <span class="count">5</span>
+        <span class="count">14</span>
         <span class="name">文章</span>
       </a>
     </div>
     <div class="item categories">
       <a href="/categories/">
-        <span class="count">1</span>
+        <span class="count">3</span>
         <span class="name">分类</span>
       </a>
     </div>
@@ -368,6 +569,7 @@ Run server1$...
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
+        <a href="/page/2/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -388,28 +590,10 @@ Run server1$...
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E6%95%B0%E6%8D%AE%E5%BA%93/" title="分类于 分布式数据库">分布式数据库</a>
+<a href="/categories/HTML/" title="分类于 HTML">HTML</a>
 </div>
 
-    <span><a href="/2023/08/20/mongdb/%E7%AC%AC%E4%B8%80%E7%AB%A0MongoDB%E7%AE%80%E4%BB%8B/" title="第一章————MongoDB介绍">第一章————MongoDB介绍</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/2023/08/20/%E7%AC%AC%E4%B8%80%E7%AB%A0%E5%BC%95%E8%A8%80/" title="未命名">未命名</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/2023/08/20/hello-world/" title="Hello World">Hello World</a></span>
+    <span><a href="/2023/08/20/html/01-%E8%AE%A4%E8%AF%86Web%E5%92%8CWeb%E6%A0%87%E5%87%86/" title="第一章————认识web">第一章————认识web</a></span>
   </li>
 
       
@@ -419,7 +603,67 @@ Run server1$...
 <a href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E6%95%B0%E6%8D%AE%E5%BA%93/" title="分类于 分布式数据库">分布式数据库</a>
 </div>
 
-    <span><a href="/2023/08/20/mongdb/%E7%AC%AC%E4%BA%8C%E7%AB%A0%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/" title="第二章————MongoDB存储结构">第二章————MongoDB存储结构</a></span>
+    <span><a href="/2023/08/20/mongdb/%E7%AC%AC%E4%B8%89%E7%AB%A0MongoDB%E7%89%B9%E7%82%B9/" title="第二章————MongoDB特点">第二章————MongoDB特点</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/redis/" title="分类于 redis">redis</a>
+</div>
+
+    <span><a href="/2023/08/20/redis/%E7%AC%AC%E5%9B%9B%E7%AB%A0redis%E7%BC%93%E5%AD%98%E9%97%AE%E9%A2%98/" title="第四章————redis缓存">第四章————redis缓存</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/HTML/" title="分类于 HTML">HTML</a>
+</div>
+
+    <span><a href="/2023/08/20/html/03-%E5%88%9D%E8%AF%86HTML/" title="第三章————初识HTML">第三章————初识HTML</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/redis/" title="分类于 redis">redis</a>
+</div>
+
+    <span><a href="/2023/08/20/redis/%E7%AC%AC%E4%B8%89%E7%AB%A0redis%E9%A1%B9%E7%9B%AE%E4%BD%BF%E7%94%A8/" title="第三章————redis项目使用">第三章————redis项目使用</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/redis/" title="分类于 redis">redis</a>
+</div>
+
+    <span><a href="/2023/08/20/redis/%E7%AC%AC%E4%BA%94%E7%AB%A0Redis%20%E4%B8%BA%E4%BD%95%E8%BF%99%E4%B9%88%E5%BF%AB/" title="第五章————redis为何这么快！">第五章————redis为何这么快！</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/HTML/" title="分类于 HTML">HTML</a>
+</div>
+
+    <span><a href="/2023/08/20/html/04-HTML%E6%A0%87%E7%AD%BE%EF%BC%9A%E6%8E%92%E7%89%88%E6%A0%87%E7%AD%BE/" title="第四章————排版标签">第四章————排版标签</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/redis/" title="分类于 redis">redis</a>
+</div>
+
+    <span><a href="/2023/08/20/redis/%E7%AC%AC%E4%B8%80%E7%AB%A0redis%E7%AE%80%E4%BB%8B/" title="第一章————redis简介">第一章————redis简介</a></span>
   </li>
 
       
@@ -429,7 +673,17 @@ Run server1$...
 <a href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E6%95%B0%E6%8D%AE%E5%BA%93/" title="分类于 分布式数据库">分布式数据库</a>
 </div>
 
-    <span><a href="/2023/08/20/mongdb/%E7%AC%AC%E4%B8%89%E7%AB%A0MongoDB%E7%89%B9%E7%82%B9/" title="第三章————MongoDB特点">第三章————MongoDB特点</a></span>
+    <span><a href="/2023/08/20/mongdb/%E7%AC%AC%E4%BA%8C%E7%AB%A0%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/" title="第三章————MongoDB存储结构">第三章————MongoDB存储结构</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/HTML/" title="分类于 HTML">HTML</a>
+</div>
+
+    <span><a href="/2023/08/20/html/05-HTML%E6%A0%87%E7%AD%BE%EF%BC%9A%E5%AD%97%E4%BD%93%E6%A0%87%E7%AD%BE%E5%92%8C%E8%B6%85%E9%93%BE%E6%8E%A5/" title="第五章————字体标签和超链接">第五章————字体标签和超链接</a></span>
   </li>
 
   </ul>

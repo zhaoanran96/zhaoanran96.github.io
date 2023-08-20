@@ -29,7 +29,7 @@
 
   
 
-<link rel="canonical" href="http://example.com/2023/08/20/mongdb/%E7%AC%AC%E4%B8%89%E7%AB%A0MongoDB%E7%89%B9%E7%82%B9/">
+<link rel="canonical" href="http://example.com/2023/08/20/redis/%E7%AC%AC%E4%B8%80%E7%AB%A0redis%E7%AE%80%E4%BB%8B/">
 
 
 
@@ -60,16 +60,16 @@
         <div id="brand">
           <div class="pjax">
           
-  <h1 itemprop="name headline">第二章————MongoDB特点
+  <h1 itemprop="name headline">第一章————redis简介
   </h1>
   
 <div class="meta">
-  <span class="item" title="创建时间：2023-08-20 19:34:54">
+  <span class="item" title="创建时间：2023-08-20 20:41:41">
     <span class="icon">
       <i class="ic i-calendar"></i>
     </span>
     <span class="text">发表于</span>
-    <time itemprop="dateCreated datePublished" datetime="2023-08-20T19:34:54+08:00">2023-08-20</time>
+    <time itemprop="dateCreated datePublished" datetime="2023-08-20T20:41:41+08:00">2023-08-20</time>
   </span>
 </div>
 
@@ -102,12 +102,12 @@
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://image.baidu.com/search/down?url=https://lz.sinaimg.cn/large/6833939bly1giciundwu5j20zk0m8n9e.jpg"></li>
-          <li class="item" data-background-image="https://image.baidu.com/search/down?url=https://lz.sinaimg.cn/large/6833939bly1gipesng5oej20zk0m87d4.jpg"></li>
-          <li class="item" data-background-image="https://image.baidu.com/search/down?url=https://lz.sinaimg.cn/large/6833939bly1giciuv0socj20zk0m8qes.jpg"></li>
-          <li class="item" data-background-image="https://image.baidu.com/search/down?url=https://lz.sinaimg.cn/large/6833939bly1giciszlczyj20zk0m816d.jpg"></li>
-          <li class="item" data-background-image="https://image.baidu.com/search/down?url=https://lz.sinaimg.cn/large/6833939bly1gicli9lfebj20zk0m84qp.jpg"></li>
-          <li class="item" data-background-image="https://image.baidu.com/search/down?url=https://lz.sinaimg.cn/large/6833939bly1gipeuv80yoj20zk0m8kjl.jpg"></li>
+          <li class="item" data-background-image="https://image.baidu.com/search/down?url=https://lz.sinaimg.cn/large/6833939bly1giclxxcb6rj20zk0m8b29.jpg"></li>
+          <li class="item" data-background-image="https://image.baidu.com/search/down?url=https://lz.sinaimg.cn/large/6833939bly1gicljgocqbj20zk0m8e81.jpg"></li>
+          <li class="item" data-background-image="https://image.baidu.com/search/down?url=https://lz.sinaimg.cn/large/6833939bly1gipet8c1a2j20zk0m8kct.jpg"></li>
+          <li class="item" data-background-image="https://image.baidu.com/search/down?url=https://lz.sinaimg.cn/large/6833939bly1gicitht3xtj20zk0m8k5v.jpg"></li>
+          <li class="item" data-background-image="https://image.baidu.com/search/down?url=https://lz.sinaimg.cn/large/6833939bly1gipeyhsblkj20zk0m81kx.jpg"></li>
+          <li class="item" data-background-image="https://image.baidu.com/search/down?url=https://lz.sinaimg.cn/large/6833939bly1gipeun65urj20zk0m81ii.jpg"></li>
         </ul>
       </div>
     <div id="waves">
@@ -133,12 +133,12 @@
 <div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
 <i class="ic i-home"></i>
 <span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
-<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="item" rel="index" title="分类于 分布式数据库"><span itemprop="name">分布式数据库</span></a>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/redis/" itemprop="item" rel="index" title="分类于 redis"><span itemprop="name">redis</span></a>
 <meta itemprop="position" content="1" /></span>
 </div>
 
     <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/20/mongdb/%E7%AC%AC%E4%B8%89%E7%AB%A0MongoDB%E7%89%B9%E7%82%B9/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/20/redis/%E7%AC%AC%E4%B8%80%E7%AB%A0redis%E7%AE%80%E4%BB%8B/">
 
 <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="image" content="http://q1.qlogo.cn/g?b=qq&nk=2940208903&s=4">
@@ -153,18 +153,39 @@
   <div class="body md" itemprop="articleBody">
     
 
-    <h1 id="MongoDB特点"><a href="#MongoDB特点" class="headerlink" title="MongoDB特点"></a>MongoDB特点</h1><h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ul>
-<li><strong>数据记录被存储为文档</strong> ：MongoDB 中的记录就是一个 BSON 文档，它是由键值对组成的数据结构，类似于 JSON 对象，是 MongoDB 中的基本数据单元。</li>
-<li><strong>模式自由</strong> ：集合的概念类似 MySQL 里的表，但它不需要定义任何模式，能够用更少的数据对象表现复杂的领域模型对象。</li>
-<li><strong>支持多种查询方式</strong> ：MongoDB 查询 API 支持读写操作 (CRUD)以及数据聚合、文本搜索和地理空间查询。</li>
-<li><strong>支持 ACID 事务</strong> ：NoSQL 数据库通常不支持事务，为了可扩展和高性能进行了权衡。不过，也有例外，MongoDB 就支持事务。与关系型数据库一样，MongoDB 事务同样具有 ACID 特性。MongoDB 单文档原生支持原子性，也具备事务的特性。MongoDB 4.0 加入了对多文档事务的支持，但只支持复制集部署模式下的事务，也就是说事务的作用域限制为一个副本集内。MongoDB 4.2 引入了分布式事务，增加了对分片集群上多文档事务的支持，并合并了对副本集上多文档事务的现有支持。</li>
-<li><strong>高效的二进制存储</strong> ：存储在集合中的文档，是以键值对的形式存在的。键用于唯一标识一个文档，一般是 ObjectId 类型，值是以 BSON 形式存在的。BSON &#x3D; Binary JSON， 是在 JSON 基础上加了一些类型及元数据描述的格式。</li>
-<li><strong>自带数据压缩功能</strong> ：存储同样的数据所需的资源更少。</li>
-<li><strong>支持 mapreduce</strong> ：通过分治的方式完成复杂的聚合任务。不过，从 MongoDB 5.0 开始，map-reduce 已经不被官方推荐使用了，替代方案是 聚合管道。聚合管道提供比 map-reduce 更好的性能和可用性。</li>
-<li><strong>支持多种类型的索引</strong> ：MongoDB 支持多种类型的索引，包括单字段索引、复合索引、多键索引、哈希索引、文本索引、 地理位置索引等，每种类型的索引有不同的使用场合。</li>
-<li><strong>支持 failover</strong> ：提供自动故障恢复的功能，主节点发生故障时，自动从从节点中选举出一个新的主节点，确保集群的正常使用，这对于客户端来说是无感知的。</li>
-<li><strong>支持分片集群</strong> ：MongoDB 支持集群自动切分数据，让集群存储更多的数据，具备更强的性能。在数据插入和更新时，能够自动路由和存储。</li>
-<li><strong>支持存储大文件</strong> ：MongoDB 的单文档存储空间要求不超过 16MB。对于超过 16MB 的大文件，MongoDB 提供了 GridFS 来进行存储，通过 GridFS，可以将大型数据进行分块处理，然后将这些切分后的小文档保存在数据库中。</li>
+    <h1 id="redis"><a href="#redis" class="headerlink" title="redis"></a>redis</h1><h2 id="redis简介"><a href="#redis简介" class="headerlink" title="redis简介"></a>redis简介</h2><ol>
+<li><p>是什么</p>
+<p>Redis:REmote DIctionary Server(远程字典服务器)，是完全开源免费的，用C语言编写的，遵守BSD协议，<br>是一个高性能的(key&#x2F;value)分布式内存数据库，基于内存运行并支持持久化的NoSQL数据库，是当前最热门的NoSql数据库之一,也被人们称为数据结构服务器。</p>
+<p>Redis 与其他 key - value 缓存产品有以下三个特点</p>
+<p>Redis支持数据的持久化，可以将内存中的数据保持在磁盘中，重启的时候可以再次加载进行使用<br>Redis不仅仅支持简单的key-value类型的数据，同时还提供list，set，zset，hash等数据结构的存储<br>Redis支持数据的备份，即master-slave模式的数据备份。</p>
+</li>
+<li><p>能干嘛</p>
+<ul>
+<li>内存存储和持久化：redis支持异步将内存中的数据写到硬盘上，同时不影响继续服务</li>
+<li>取最新N个数据的操作，如：可以将最新的10条评论的ID放在Redis的List集合里面</li>
+<li>模拟类似于HttpSession这种需要设定过期时间的功能</li>
+<li>发布、订阅消息系统</li>
+<li>定时器、计数器</li>
+</ul>
+</li>
+</ol>
+<h2 id="redis基础知识"><a href="#redis基础知识" class="headerlink" title="redis基础知识"></a>redis基础知识</h2><p>1.单进程<br>单进程模型来处理客户端的请求。对读写等事件的响应。是通过对epoll函数的包装来做到的。Redis的实际处理速度完全依靠主进程的执行效率。Epoll是Linux内核为处理大批量文件描述符而作了改进的epoll，是Linux下多路复用IO接口select&#x2F;poll的增强版本，它能显著提高程序在大量并发连接中只有少量活跃的情况下的系统CPU利用率。</p>
+<p>2.Redis默认有16个数据库<br>默认16个数据库，类似数组下表从零开始，初始默认使用零号库</p>
+<h2 id="redis常用命令"><a href="#redis常用命令" class="headerlink" title="redis常用命令"></a>redis常用命令</h2><ul>
+<li>Select命令可以切换不同的数据库</li>
+<li>Dbsize查看当前数据库的key的数量</li>
+<li>Flushdb：清空当前库</li>
+<li>Flushall：通杀全部库</li>
+</ul>
+<h2 id="redis特点"><a href="#redis特点" class="headerlink" title="redis特点"></a>redis特点</h2><ul>
+<li>性能优秀，数据在内存中，读写速度非常快，支持并发 10W QPS。</li>
+<li>单进程单线程，是线程安全的，采用 IO 多路复用机制。</li>
+<li>丰富的数据类型，支持字符串（strings）、散列（hashes）、列表（lists）、集合（sets）、有序集合（sorted sets）等。</li>
+<li>支持数据持久化（rdb和aof两种，后面会详细说明）。</li>
+<li>可以将内存中数据保存在磁盘中，重启时加载。</li>
+<li>主从复制，哨兵，高可用。</li>
+<li>可以用作分布式锁（如setnx或redsession）。</li>
+<li>可以作为消息中间件使用，支持发布订阅。</li>
 </ul>
 
   </div>
@@ -177,7 +198,7 @@
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">更新于</span>
-    <time title="修改时间：2023-08-20 20:15:24" itemprop="dateModified" datetime="2023-08-20T20:15:24+08:00">2023-08-20</time>
+    <time title="修改时间：2023-08-20 20:45:00" itemprop="dateModified" datetime="2023-08-20T20:45:00+08:00">2023-08-20</time>
   </span>
 </div>
 
@@ -190,7 +211,7 @@
   </li>
   <li class="link">
     <strong>本文链接：</strong>
-    <a href="http://example.com/2023/08/20/mongdb/%E7%AC%AC%E4%B8%89%E7%AB%A0MongoDB%E7%89%B9%E7%82%B9/" title="第二章————MongoDB特点">http://example.com/2023/08/20/mongdb/第三章MongoDB特点/</a>
+    <a href="http://example.com/2023/08/20/redis/%E7%AC%AC%E4%B8%80%E7%AB%A0redis%E7%AE%80%E4%BB%8B/" title="第一章————redis简介">http://example.com/2023/08/20/redis/第一章redis简介/</a>
   </li>
   <li class="license">
     <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
@@ -209,20 +230,20 @@
     <div class="item left">
       
 
-  <a href="/2023/08/20/mongdb/%E7%AC%AC%E4%B8%80%E7%AB%A0MongoDB%E7%AE%80%E4%BB%8B/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;image.baidu.com&#x2F;search&#x2F;down?url&#x3D;https:&#x2F;&#x2F;lz.sinaimg.cn&#x2F;large&#x2F;6833939bly1gipeuibk9fj20zk0m8ay2.jpg" title="第一章————MongoDB介绍">
+  <a href="/2023/08/20/html/05-HTML%E6%A0%87%E7%AD%BE%EF%BC%9A%E5%AD%97%E4%BD%93%E6%A0%87%E7%AD%BE%E5%92%8C%E8%B6%85%E9%93%BE%E6%8E%A5/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;image.baidu.com&#x2F;search&#x2F;down?url&#x3D;https:&#x2F;&#x2F;lz.sinaimg.cn&#x2F;large&#x2F;6833939bly1giclh3brzpj20zk0m8ann.jpg" title="第五章————字体标签和超链接">
   <span class="type">上一篇</span>
-  <span class="category"><i class="ic i-flag"></i> 分布式数据库</span>
-  <h3>第一章————MongoDB介绍</h3>
+  <span class="category"><i class="ic i-flag"></i> HTML</span>
+  <h3>第五章————字体标签和超链接</h3>
   </a>
 
     </div>
     <div class="item right">
       
 
-  <a href="/2023/08/20/mongdb/%E7%AC%AC%E4%BA%8C%E7%AB%A0%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;image.baidu.com&#x2F;search&#x2F;down?url&#x3D;https:&#x2F;&#x2F;lz.sinaimg.cn&#x2F;large&#x2F;6833939bly1gipew8gmvyj20zk0m87wh.jpg" title="第三章————MongoDB存储结构">
+  <a href="/2023/08/20/redis/%E7%AC%AC%E5%9B%9B%E7%AB%A0redis%E7%BC%93%E5%AD%98%E9%97%AE%E9%A2%98/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;image.baidu.com&#x2F;search&#x2F;down?url&#x3D;https:&#x2F;&#x2F;lz.sinaimg.cn&#x2F;large&#x2F;6833939bly1giclxxcb6rj20zk0m8b29.jpg" title="第四章————redis缓存">
   <span class="type">下一篇</span>
-  <span class="category"><i class="ic i-flag"></i> 分布式数据库</span>
-  <h3>第三章————MongoDB存储结构</h3>
+  <span class="category"><i class="ic i-flag"></i> redis</span>
+  <h3>第四章————redis缓存</h3>
   </a>
 
     </div>
@@ -241,11 +262,11 @@
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#MongoDB%E7%89%B9%E7%82%B9"><span class="toc-number">1.</span> <span class="toc-text">MongoDB特点</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%B9%E7%82%B9"><span class="toc-number">1.1.</span> <span class="toc-text">特点</span></a></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#redis"><span class="toc-number">1.</span> <span class="toc-text">redis</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#redis%E7%AE%80%E4%BB%8B"><span class="toc-number">1.1.</span> <span class="toc-text">redis简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#redis%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="toc-number">1.2.</span> <span class="toc-text">redis基础知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#redis%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-number">1.3.</span> <span class="toc-text">redis常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#redis%E7%89%B9%E7%82%B9"><span class="toc-number">1.4.</span> <span class="toc-text">redis特点</span></a></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
-          <li><a href="/2023/08/20/mongdb/%E7%AC%AC%E4%B8%80%E7%AB%A0MongoDB%E7%AE%80%E4%BB%8B/" rel="bookmark" title="第一章————MongoDB介绍">第一章————MongoDB介绍</a></li><li class="active"><a href="/2023/08/20/mongdb/%E7%AC%AC%E4%B8%89%E7%AB%A0MongoDB%E7%89%B9%E7%82%B9/" rel="bookmark" title="第二章————MongoDB特点">第二章————MongoDB特点</a></li><li><a href="/2023/08/20/mongdb/%E7%AC%AC%E4%BA%8C%E7%AB%A0%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/" rel="bookmark" title="第三章————MongoDB存储结构">第三章————MongoDB存储结构</a></li>
+          <li class="active"><a href="/2023/08/20/redis/%E7%AC%AC%E4%B8%80%E7%AB%A0redis%E7%AE%80%E4%BB%8B/" rel="bookmark" title="第一章————redis简介">第一章————redis简介</a></li><li><a href="/2023/08/20/redis/%E7%AC%AC%E5%9B%9B%E7%AB%A0redis%E7%BC%93%E5%AD%98%E9%97%AE%E9%A2%98/" rel="bookmark" title="第四章————redis缓存">第四章————redis缓存</a></li><li><a href="/2023/08/20/redis/%E7%AC%AC%E4%BA%94%E7%AB%A0Redis%20%E4%B8%BA%E4%BD%95%E8%BF%99%E4%B9%88%E5%BF%AB/" rel="bookmark" title="第五章————redis为何这么快！">第五章————redis为何这么快！</a></li><li><a href="/2023/08/20/redis/%E7%AC%AC%E4%B8%89%E7%AB%A0redis%E9%A1%B9%E7%9B%AE%E4%BD%BF%E7%94%A8/" rel="bookmark" title="第三章————redis项目使用">第三章————redis项目使用</a></li><li><a href="/2023/08/20/redis/%E7%AC%AC%E4%BA%8C%E7%AB%A0redis%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" rel="bookmark" title="第二章————redis数据类型">第二章————redis数据类型</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="站点概览">
@@ -321,12 +342,12 @@
 
   <ul id="quick">
     <li class="prev pjax">
-        <a href="/2023/08/20/mongdb/%E7%AC%AC%E4%B8%80%E7%AB%A0MongoDB%E7%AE%80%E4%BB%8B/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+        <a href="/2023/08/20/html/05-HTML%E6%A0%87%E7%AD%BE%EF%BC%9A%E5%AD%97%E4%BD%93%E6%A0%87%E7%AD%BE%E5%92%8C%E8%B6%85%E9%93%BE%E6%8E%A5/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
-        <a href="/2023/08/20/mongdb/%E7%AC%AC%E4%BA%8C%E7%AB%A0%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+        <a href="/2023/08/20/redis/%E7%AC%AC%E5%9B%9B%E7%AB%A0redis%E7%BC%93%E5%AD%98%E9%97%AE%E9%A2%98/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -351,77 +372,7 @@
 <a href="/categories/redis/" title="分类于 redis">redis</a>
 </div>
 
-    <span><a href="/2023/08/20/redis/%E7%AC%AC%E4%BA%94%E7%AB%A0Redis%20%E4%B8%BA%E4%BD%95%E8%BF%99%E4%B9%88%E5%BF%AB/" title="第五章————redis为何这么快！">第五章————redis为何这么快！</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/redis/" title="分类于 redis">redis</a>
-</div>
-
-    <span><a href="/2023/08/20/redis/%E7%AC%AC%E5%9B%9B%E7%AB%A0redis%E7%BC%93%E5%AD%98%E9%97%AE%E9%A2%98/" title="第四章————redis缓存">第四章————redis缓存</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E6%95%B0%E6%8D%AE%E5%BA%93/" title="分类于 分布式数据库">分布式数据库</a>
-</div>
-
-    <span><a href="/2023/08/20/mongdb/%E7%AC%AC%E4%BA%8C%E7%AB%A0%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/" title="第三章————MongoDB存储结构">第三章————MongoDB存储结构</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/redis/" title="分类于 redis">redis</a>
-</div>
-
     <span><a href="/2023/08/20/redis/%E7%AC%AC%E4%B8%89%E7%AB%A0redis%E9%A1%B9%E7%9B%AE%E4%BD%BF%E7%94%A8/" title="第三章————redis项目使用">第三章————redis项目使用</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/HTML/" title="分类于 HTML">HTML</a>
-</div>
-
-    <span><a href="/2023/08/20/html/04-HTML%E6%A0%87%E7%AD%BE%EF%BC%9A%E6%8E%92%E7%89%88%E6%A0%87%E7%AD%BE/" title="第四章————排版标签">第四章————排版标签</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/HTML/" title="分类于 HTML">HTML</a>
-</div>
-
-    <span><a href="/2023/08/20/html/02-%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E4%BB%8B%E7%BB%8D/" title="第二章————浏览器的介绍">第二章————浏览器的介绍</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/redis/" title="分类于 redis">redis</a>
-</div>
-
-    <span><a href="/2023/08/20/redis/%E7%AC%AC%E4%BA%8C%E7%AB%A0redis%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" title="第二章————redis数据类型">第二章————redis数据类型</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/HTML/" title="分类于 HTML">HTML</a>
-</div>
-
-    <span><a href="/2023/08/20/html/01-%E8%AE%A4%E8%AF%86Web%E5%92%8CWeb%E6%A0%87%E5%87%86/" title="第一章————认识web">第一章————认识web</a></span>
   </li>
 
       
@@ -438,10 +389,80 @@
   <li class="item">
     
 <div class="breadcrumb">
+<a href="/categories/redis/" title="分类于 redis">redis</a>
+</div>
+
+    <span><a href="/2023/08/20/redis/%E7%AC%AC%E5%9B%9B%E7%AB%A0redis%E7%BC%93%E5%AD%98%E9%97%AE%E9%A2%98/" title="第四章————redis缓存">第四章————redis缓存</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/HTML/" title="分类于 HTML">HTML</a>
+</div>
+
+    <span><a href="/2023/08/20/html/06-HTML%E6%A0%87%E7%AD%BE%EF%BC%9A%E5%9B%BE%E7%89%87%E6%A0%87%E7%AD%BE/" title="第六章————图片标签">第六章————图片标签</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
 <a href="/categories/HTML/" title="分类于 HTML">HTML</a>
 </div>
 
     <span><a href="/2023/08/20/html/03-%E5%88%9D%E8%AF%86HTML/" title="第三章————初识HTML">第三章————初识HTML</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/HTML/" title="分类于 HTML">HTML</a>
+</div>
+
+    <span><a href="/2023/08/20/html/04-HTML%E6%A0%87%E7%AD%BE%EF%BC%9A%E6%8E%92%E7%89%88%E6%A0%87%E7%AD%BE/" title="第四章————排版标签">第四章————排版标签</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/redis/" title="分类于 redis">redis</a>
+</div>
+
+    <span><a href="/2023/08/20/redis/%E7%AC%AC%E4%B8%80%E7%AB%A0redis%E7%AE%80%E4%BB%8B/" title="第一章————redis简介">第一章————redis简介</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/redis/" title="分类于 redis">redis</a>
+</div>
+
+    <span><a href="/2023/08/20/redis/%E7%AC%AC%E4%BA%94%E7%AB%A0Redis%20%E4%B8%BA%E4%BD%95%E8%BF%99%E4%B9%88%E5%BF%AB/" title="第五章————redis为何这么快！">第五章————redis为何这么快！</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E6%95%B0%E6%8D%AE%E5%BA%93/" title="分类于 分布式数据库">分布式数据库</a>
+</div>
+
+    <span><a href="/2023/08/20/mongdb/%E7%AC%AC%E4%B8%89%E7%AB%A0MongoDB%E7%89%B9%E7%82%B9/" title="第二章————MongoDB特点">第二章————MongoDB特点</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/redis/" title="分类于 redis">redis</a>
+</div>
+
+    <span><a href="/2023/08/20/redis/%E7%AC%AC%E4%BA%8C%E7%AB%A0redis%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" title="第二章————redis数据类型">第二章————redis数据类型</a></span>
   </li>
 
   </ul>
@@ -482,7 +503,7 @@
   </div>
 <script data-config type="text/javascript">
   var LOCAL = {
-    path: '2023/08/20/mongdb/第三章MongoDB特点/',
+    path: '2023/08/20/redis/第一章redis简介/',
     favicon: {
       show: "（●´3｀●）やれやれだぜ",
       hide: "(´Д｀)大変だ！"
